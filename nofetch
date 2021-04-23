@@ -1,9 +1,44 @@
-#!/bin/sh
+#!/bin/bash
+
+rng=$((1 + $RANDOM % 10 ))
+
+if [ $rng -eq 1 ]
+then
+        nofetch="probably a computer"
+elif [ $rng -eq 2 ]
+then
+        nofetch="there's probably some ram in there"
+elif [ $rng -eq 3 ]
+then
+        nofetch="init should ideally be running"
+elif [ $rng -eq 4 ]
+then
+        nofetch="yeah"
+elif [ $rng -eq 5 ]
+then
+        nofetch="you should probably go outside"
+elif [ $rng -eq 6 ]
+then
+        nofetch="i would be lead to believe that / is mounted"
+elif [ $rng -eq 7 ]
+then
+        nofetch="hey, what's this knob do ?"
+elif [ $rng -eq 8 ]
+then
+        nofetch="do you have games on your phone ?"
+elif [ $rng -eq 9 ]
+then
+        nofetch="you mean to tell me there aren't little men in this box?"
+elif [ $rng -eq 10 ]
+then
+        nofetch="plan 4 from the front door"
+else
+        nofetch="something has gone terribly wrong"
+fi
+
+osname=$(cat /etc/os-release | grep NAME= | head -1 | sed "s/NAME=//g")
 
 echo " "
-echo "+------------------------+"
-echo "|                        |"
-echo "|   probably a computer  |"
-echo "|                        |"
-echo "+------------------------+"
+echo " > $nofetch "
+echo " > $osname $(uname -sir)"
 echo " "
