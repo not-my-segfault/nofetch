@@ -40,5 +40,5 @@ osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed "s/NAME=//g" | sed "
 
 echo " "
 echo " > $nofetch "
-echo " > $osname $(uname -sir)"
+echo " > $osname $(uname -smr)"
 echo " "
