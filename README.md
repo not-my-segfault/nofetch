@@ -18,8 +18,19 @@ simply run `nofetch`, and watch all of your r/unixporn problems go away.
 
 - run install.sh
 
-## dependencies:
+## dependencies
 
 - a shell would help
 
 - preferrably either doas or sudo (otherwise, run `install.sh` as root)
+
+## os compatability
+
+realistically any system that has the following
+
+- bash
+- grep
+- head
+- sed
+- cat
+- /etc/os-release
