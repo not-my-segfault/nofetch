@@ -36,7 +36,7 @@ else
         nofetch="something has gone terribly wrong"
 fi
 
-osname=$(cat /etc/os-release | grep NAME= | head -1 | sed "s/NAME=//g")
+osname=$(cat /etc/os-release | grep -w NAME= | head -1 | sed "s/NAME=//g" | sed "s/\"//g")
 
 echo " "
 echo " > $nofetch "
