@@ -2,26 +2,17 @@
 
 if [ $EUID -eq 0 ]
 then
-        if [ $DEBUG -eq 1 ]
-        then
-                echo "[/] uid 0"
-        fi
+        echo "[/] uid 0"
         chmod +x nofetch
         sudo cp nofetch /usr/local/bin
 elif command -v doas &> /dev/null
 then
-        if [ $DEBUG -eq 1 ]
-        then
-                echo "[/] doas"
-        fi
+        echo "[/] doas"
         chmod +x nofetch
         doas cp nofetch /usr/local/bin
 elif command -v sudo &> /dev/null
 then
-        if [ $DEBUG -eq 1 ]
-        then
-                echo "[/] sudo"
-        fi
+        echo "[/] sudo"
         chmod +x nofetch
         sudo cp nofetch /usr/local/bin
 else
