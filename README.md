@@ -8,6 +8,16 @@ look no further than nofetch.
 
 simply run install.sh as root, and all of your r/unixporn problems will go away.
 
+## install instructions
+
+- make sure `install.sh` is executable
+```
+chmod +x install.sh
+```
+- run install.sh
+
 ## dependencies:
 
 a shell would help
+
+preferrably either doas or sudo. otherwise, run `install.sh` as root
