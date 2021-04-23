@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo " "
+echo "+------------------------+"
+echo "|                        |"
+echo "|   probably a computer  |"
+echo "|                        |"
+echo "+------------------------+"
+echo " "
