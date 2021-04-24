@@ -28,7 +28,7 @@ simply run `nofetch`, and watch all of your r/unixporn problems go away.
 
 realistically any system that has the following
 
-- bash
+- bash, or any other POSIX compliant shell (will have to change the shabang in both install and nofetch itself first)
 - grep
 - head
 - sed
