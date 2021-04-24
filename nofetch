@@ -4,7 +4,12 @@ if [[ $1 == "" ]];
 then
 	rng=$((1 + $RANDOM % 11 ))
 else
-	rng=$1
+	if [[ $1 -lt 11 ]];
+	then
+		rng=$1
+	else
+		rng=$((1 + $RANDOM % 11 ))
+	fi
 fi
 
 if [ $rng -eq 1 ]
