@@ -12,23 +12,27 @@ simply run `nofetch`, and watch all of your r/unixporn problems go away.
 
 ## install instructions
 
-- make sure `install.sh` is executable
+- clone the repo to your system
+
+  `git clone https://github.com/jnats/nofetch`
+
+- make sure install.sh is set as executable
 
   `chmod +x install.sh`
 
 - run install.sh
 
+  `./install.sh`
+  
 ## dependencies
 
 - a shell would help
 
 - preferrably either doas or sudo (otherwise, run `install.sh` as root)
 
-## os compatability
-
 realistically any system that has the following
 
-- bash, or any other POSIX compliant shell (will have to change the shabang in both install and nofetch itself first)
+- bash, or any other POSIX compliant shell
 - grep
 - head
 - sed
