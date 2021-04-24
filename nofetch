@@ -54,9 +54,13 @@ else
         nofetch="something has gone terribly wrong"
 fi
 
+# exceptions to the standard
 if [ $(uname -s) == "Darwin" ]
 then
         osname="macOS/"
+elif [ $(uname -s) == "FreeBSD" ]
+then
+	osname=""
 else
         osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed "s/NAME=//g" | sed "s/\"//g")" "
 fi
