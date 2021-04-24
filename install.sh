@@ -12,18 +12,21 @@ then
         echo "[/] uid 0"
         rm $(which nofetch > /dev/null 2>&1) > /dev/null 2>&1
         chmod +x nofetch
+        mkdir -p /usr/local/bin
         cp nofetch /usr/local/bin
 elif command -v doas &> /dev/null
 then
         echo "[/] doas"
         doas rm $(which nofetch > /dev/null 2>&1) > /dev/null 2>&1
         chmod +x nofetch
+        doas mkdir -p /usr/local/bin
         doas cp nofetch /usr/local/bin
 elif command -v sudo &> /dev/null
 then
         echo "[/] sudo"
         sudo rm $(which nofetch > /dev/null 2>&1) > /dev/null 2>&1
         chmod +x nofetch
+        sudo mkdir -p /usr/local/bin
         sudo cp nofetch /usr/local/bin
 else
         echo "\n[X] neither doas nor sudo found, and command isn't running as root, have you checked README.md ?\n"
