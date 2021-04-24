@@ -22,7 +22,7 @@ simply run `nofetch`, and watch all of your r/unixporn problems go away.
 
 - a shell would help
 
-- preferrably either doas or sudo (otherwise, run `install.sh` as root)
+- doas, sudo or su (atleast su should be preinstalled, else just run the install as root)
 
 ## os compatability
 
