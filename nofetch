@@ -36,9 +36,14 @@ else
         nofetch="something has gone terribly wrong"
 fi
 
-osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed "s/NAME=//g" | sed "s/\"//g")
+if [ $(uname -s) == "Darwin" ]
+then
+        osname="macOS/"
+else
+        osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed "s/NAME=//g" | sed "s/\"//g")" "
+fi
 
 echo " "
 echo " > $nofetch "
-echo " > $osname $(uname -smr)"
+echo " > $osname$(uname -smr)"
 echo " "
