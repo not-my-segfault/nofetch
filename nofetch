@@ -1,6 +1,11 @@
 #!/bin/bash
 
-rng=$((1 + $RANDOM % 10 ))
+if [[ $1 == "" ]];
+then
+	rng=$((1 + $RANDOM % 11 ))
+else
+	rng=$1
+fi
 
 if [ $rng -eq 1 ]
 then
@@ -32,6 +37,14 @@ then
 elif [ $rng -eq 10 ]
 then
         nofetch="plan 4 from the front door"
+elif [ $rng -eq 11 ]
+then
+	if [[ $osname == "Arch Linux" ]];
+	then
+		nofetch="I use arch btw"
+	else
+		nofetch="I use "$osname "btw"
+	fi
 else
         nofetch="something has gone terribly wrong"
 fi
