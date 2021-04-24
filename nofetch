@@ -4,7 +4,12 @@ if [[ $1 == "" ]];
 then
 	rng=$((1 + $RANDOM % 11 ))
 else
-	rng=$1
+	if [[ $1 -lt 11 ]];
+	then
+		rng=$1
+	else
+		rng=$((1 + $RANDOM % 11 ))
+	fi
 fi
 
 osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed "s/NAME=//g" | sed "s/\"//g")
