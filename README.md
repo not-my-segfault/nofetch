@@ -25,16 +25,11 @@ simply run `nofetch`, and watch all of your r/unixporn problems go away.
   `./install.sh`
   
 ## dependencies
-
-- a shell would help
-
-- preferrably either doas or sudo (otherwise, run `install.sh` as root)
-
 realistically any system that has the following
 
+- preferrably either doas or sudo (otherwise, run `install.sh` as root)
 - bash, or any other POSIX compliant shell
 - grep
 - head
 - sed
 - cat
-- /etc/os-release
