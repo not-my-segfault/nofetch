@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-#!/usr/bin/env bash
-=======
 #!/bin/bash
->>>>>>> 27356e53475ace723dc01fc8e464ee6db8d8670b
-
-FILE=./nofetch
 
 if ! test -f $FILE;
 then
@@ -28,7 +22,10 @@ then
         echo "[/] sudo"
         sudo rm $(which nofetch > /dev/null 2>&1) > /dev/null 2>&1
         chmod +x nofetch
-        sudo cp nofetch /usr/local/bin
+        sudo cp nofetch /usr/bin
 else
-        echo "\n[X] neither doas nor sudo found, and command isn't running as root, have you checked README.md ?\n"
+        echo "[/] neither sudo, nor doas found, using su"
+        su - root "rm $(which nofetch > /dev/null 2>&1) > /dev/null 2>&1"
+        chmod +x nofetch
+        su - root "cp nofetch /usr/bin"
 fi
