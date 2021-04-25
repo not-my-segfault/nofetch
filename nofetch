@@ -4,13 +4,15 @@ if [[ $1 == "" ]];
 then
 	rng=$((1 + $RANDOM % 11 ))
 else
-	if [[ $1 -lt 11 ]];
+	if [[ $1 -lt 12 ]];
 	then
 		rng=$1
 	else
 		rng=$((1 + $RANDOM % 11 ))
 	fi
 fi
+
+osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed "s/NAME=//g" | sed "s/\"//g")" "
 
 if [ $rng -eq 1 ]
 then
@@ -61,8 +63,6 @@ then
 elif [ $(uname -s) == "FreeBSD" ]
 then
 	osname=""
-else
-        osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed "s/NAME=//g" | sed "s/\"//g")" "
 fi
 
 echo " "
