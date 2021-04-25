@@ -48,9 +48,9 @@ elif [ $rng -eq 11 ]
 then
 	if [[ $osname == "Arch Linux" ]];
 	then
-		nofetch="I use arch btw"
+		nofetch="i use arch btw"
 	else
-		nofetch="I use "$osname "btw"
+		nofetch="i use "$osname" btw"
 	fi
 else
         nofetch="something has gone terribly wrong"
