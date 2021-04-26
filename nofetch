@@ -12,7 +12,16 @@ else
 	fi
 fi
 
-osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed "s/NAME=//g" | sed "s/\"//g")" "
+
+if [ $(uname -s) == "Darwin" ]
+then
+        osname="macOS/"
+elif [ $(uname -s) == "FreeBSD" ]
+then
+	osname=""
+else
+	osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed "s/NAME=//g" | sed "s/\"//g")" "
+fi
 
 if [ $rng -eq 1 ]
 then
@@ -48,21 +57,12 @@ elif [ $rng -eq 11 ]
 then
 	if [[ $osname == "Arch Linux" ]];
 	then
-		nofetch="I use arch btw"
+		nofetch="i use arch btw"
 	else
-		nofetch="I use "$osname "btw"
+		nofetch="i use "$osname" btw"
 	fi
 else
         nofetch="something has gone terribly wrong"
-fi
-
-# exceptions to the standard
-if [ $(uname -s) == "Darwin" ]
-then
-        osname="macOS/"
-elif [ $(uname -s) == "FreeBSD" ]
-then
-	osname=""
 fi
 
 echo " "
