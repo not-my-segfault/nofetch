@@ -58,8 +58,11 @@ then
 	if [[ $osname == "Arch Linux" ]];
 	then
 		nofetch="i use arch btw"
-	else
-		nofetch="i use "$osname" btw"
+  elif [[ $osname == "" ]]
+  then
+		nofetch="i use FreeBSD btw"
+  else
+    nofetch="i use "$osname" btw"
 	fi
 else
         nofetch="something has gone terribly wrong"
