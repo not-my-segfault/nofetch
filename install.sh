@@ -1,33 +1,34 @@
 #!/usr/bin/env bash
 
-FILE=./nofetch
+file=nofetch
+url=https://raw.githubusercontent.com/jnats/nofetch/main/nofetch
 
-if ! test -f $FILE;
+if ! test -f $file;
 then
-        curl -LO https://raw.githubusercontent.com/jnats/nofetch/main/nofetch
+        curl -LO $url
 fi
 
 if [ $EUID -eq 0 ]
 then
         echo "[/] uid 0"
-        rm $(which nofetch > /dev/null 2>&1) > /dev/null 2>&1
-        chmod +x nofetch
+        rm $(which $file > /dev/null 2>&1) > /dev/null 2>&1
+        chmod +x $file
         mkdir -p /usr/local/bin
-        cp nofetch /usr/local/bin
+        cp $file /usr/local/bin
 elif command -v doas &> /dev/null
 then
         echo "[/] doas"
-        doas rm $(which nofetch > /dev/null 2>&1) > /dev/null 2>&1
-        chmod +x nofetch
+        doas rm $(which $file > /dev/null 2>&1) > /dev/null 2>&1
+        chmod +x $file
         doas mkdir -p /usr/local/bin
-        doas cp nofetch /usr/local/bin
+        doas cp $file /usr/local/bin
 elif command -v sudo &> /dev/null
 then
         echo "[/] sudo"
-        sudo rm $(which nofetch > /dev/null 2>&1) > /dev/null 2>&1
-        chmod +x nofetch
+        sudo rm $(which $file > /dev/null 2>&1) > /dev/null 2>&1
+        chmod +x $file
         sudo mkdir -p /usr/local/bin
-        sudo cp nofetch /usr/local/bin
+        sudo cp $file /usr/local/bin
 else
         echo "\n[X] neither doas nor sudo found, and command isn't running as root, have you checked README.md ?\n"
 fi
