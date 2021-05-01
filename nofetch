@@ -2,9 +2,9 @@
 
 if [[ $1 == "" ]];
 then
-	rng=$((1 + $RANDOM % 11 ))
+	rng=$((1 + $RANDOM % 13 ))
 else
-	if [[ $1 -lt 12 ]];
+	if [[ $1 -lt 14 ]];
 	then
 		rng=$1
 	else
@@ -56,7 +56,31 @@ then
 elif [ $rng -eq 11 ]
 then
 	nofetch="i use "$osname" btw"
+elif [ $rng -eq 12 ]
+then
+	if [ $osname == *"gentoo"* ]
+	then
+		nofetch="you know you can 'emerge --ask life' right?"
+	elif [ $osname == *"unknown"* ]
+	then
+		nofetch="you know you can also build a life right? (1222SBU build time)"
+	elif [ $osname == "arch" ]
+	then
+		nofetch="you know you can install a life right? (sudo pacman -S life), warning, might break pc"
+	elif [ $osname == *"FreeBSD"* ]
+	then
+		nofetch=="you know you can install a life right? LetMeEscapeThis/life"
+	elif [ $osname == *"OpenBSD"* ]
+	then
+		nofetch="you know you can install a life right? LetMeEscapeThis/life"
+	else
+		nofetch="you know you can install a life right?"
+	fi
+elif [ $rng -eq 13 ]
+then
+	nofetch="look, I found that video of a cute singing dog: https://youtu.be/j5a0jTc9S10"
 else
+
         nofetch="something has gone terribly wrong"
 fi
 
