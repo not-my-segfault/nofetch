@@ -2,13 +2,13 @@
 
 if [[ $1 == "" ]];
 then
-	rng=$((1 + $RANDOM % 11 ))
+	rng=$((1 + $RANDOM % 12 ))
 else
-	if [[ $1 -lt 12 ]];
+	if [[ $1 -lt 13 ]];
 	then
 		rng=$1
 	else
-		rng=$((1 + $RANDOM % 11 ))
+		rng=$((1 + $RANDOM % 12 ))
 	fi
 fi
 
@@ -56,6 +56,9 @@ then
 elif [ $rng -eq 11 ]
 then
 	nofetch="i use "$osname" btw"
+elif [ $rng -eq 12 ]
+then
+	nofetch="if you're reading this, it's already too late"
 else
         nofetch="something has gone terribly wrong"
 fi
