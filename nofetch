@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [[ $1 == "" ]];
 then
@@ -13,14 +13,14 @@ else
 fi
 
 
-if [ $(uname -s) == "Darwin" ]
+if [ -d /Library ]
 then
-        osname="macOS/"
-elif [ $(uname -s) == "FreeBSD" ]
+        osname="macOS"
+elif [ -f /etc/os-release ]
 then
-	osname=""
+	osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed 's/NAME=//g' | sed 's/\"//g' | sed 's/ Linux//g')
 else
-	osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed "s/NAME=//g" | sed "s/\"//g")" "
+	osname="Unknown"
 fi
 
 if [ $rng -eq 1 ]
@@ -55,20 +55,14 @@ then
         nofetch="plan 4 from the front door"
 elif [ $rng -eq 11 ]
 then
-	if [[ $osname == "Arch Linux" ]];
-	then
-		nofetch="i use arch btw"
-  elif [[ $osname == "" ]]
-  then
-		nofetch="i use FreeBSD btw"
-  else
-    nofetch="i use "$osname" btw"
-	fi
+	nofetch="i use "$osname" btw"
 else
         nofetch="something has gone terribly wrong"
 fi
 
+osname=$(echo $osname | sed 's/FreeBSD //g')
+
 echo " "
-echo " > $nofetch "
-echo " > $osname$(uname -smr)"
+echo " > $nofetch" | tr '[:upper:]' '[:lower:]'
+echo " > $osname $(uname -smr)" | tr '[:upper:]' '[:lower:]'
 echo " "
