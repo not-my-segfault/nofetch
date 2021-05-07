@@ -66,6 +66,6 @@ fi
 osname=$(echo $osname | sed 's/FreeBSD //g')
 
 echo " "
-echo " > $nofetch" | tr '[:upper:]' '[:lower:]'
-echo " > $osname $(uname -smr)" | tr '[:upper:]' '[:lower:]'
+echo "> $nofetch" | tr '[:upper:]' '[:lower:]'
+echo "> $osname $(uname -smr)" | tr '[:upper:]' '[:lower:]'
 echo " "
