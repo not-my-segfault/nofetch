@@ -63,7 +63,9 @@ else
         nofetch="something has gone terribly wrong"
 fi
 
+osname=$(echo $osname | sed 's/FreeBSD //g')
+
 echo " "
 echo "> $nofetch" | tr '[:upper:]' '[:lower:]'
-echo "> $osname $(uname -smr)" | tr '[:upper:]' '[:lower:]' | sed 's/\b\([a-z]\+\)[ ,\n]\1/\1/g'
+echo "> $osname $(uname -smr)" | tr '[:upper:]' '[:lower:]'
 echo " "
