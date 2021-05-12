@@ -16,8 +16,7 @@ uname -o &> /dev/null
 if [ $? -eq 0 ]
 then
 	osname=$(uname -o)
-fi
-if [ $(uname -s) == "Darwin" ]
+elif [ $(uname -s) == "Darwin" ]
 then
         osname=$(sw_vers | cut -d':' -f2- | head -n 1 | xargs)
 elif [ -f /etc/os-release ]
