@@ -12,10 +12,14 @@ else
 	fi
 fi
 
-
-if [ -d /Library ]
+uname -o &> /dev/null
+if [ $? -eq 0 ]
 then
-        osname="macOS"
+	osname=$(uname -o)
+fi
+if [ $(uname -s) == "Darwin" ]
+then
+        osname=$(sw_vers | cut -d':' -f2- | head -n 1 | xargs)
 elif [ -f /etc/os-release ]
 then
 	osname=$(cat /etc/os-release | grep -w NAME | head -1 | sed 's/NAME=//g' | sed 's/\"//g' | sed 's/ Linux//g')
