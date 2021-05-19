@@ -72,6 +72,12 @@ osname=$(echo $osname | sed 's/FreeBSD //g')
 if [ $1 == "-o" ] &> /dev/null || [ $2 == "-o" ] &> /dev/null
 then
 	echo "$osname"
+elif [[ "$osname" == *"BSD"* ]]
+then
+	echo " "
+	echo "> $nofetch" | tr '[:upper:]' '[:lower:]'
+	echo "> $(uname -smr)" | tr '[:upper:]' '[:lower:]'
+	echo " "
 else
 	echo " "
 	echo "> $nofetch" | tr '[:upper:]' '[:lower:]'
