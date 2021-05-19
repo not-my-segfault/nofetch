@@ -27,40 +27,40 @@ else
 	osname="Unknown"
 fi
 
-if [ $rng -eq 1 ]
+if [ $rng -eq 1 ] &> /dev/null
 then
         nofetch="probably a computer"
-elif [ $rng -eq 2 ]
+elif [ $rng -eq 2 ] &> /dev/null
 then
         nofetch="there's probably some ram in there"
-elif [ $rng -eq 3 ]
+elif [ $rng -eq 3 ] &> /dev/null
 then
         nofetch="init should ideally be running"
-elif [ $rng -eq 4 ]
+elif [ $rng -eq 4 ] &> /dev/null
 then
         nofetch="yeah"
-elif [ $rng -eq 5 ]
+elif [ $rng -eq 5 ] &> /dev/null
 then
         nofetch="you should probably go outside"
-elif [ $rng -eq 6 ]
+elif [ $rng -eq 6 ] &> /dev/null
 then
         nofetch="i would be lead to believe that / is mounted"
-elif [ $rng -eq 7 ]
+elif [ $rng -eq 7 ] &> /dev/null
 then
         nofetch="hey, what's this knob do ?"
-elif [ $rng -eq 8 ]
+elif [ $rng -eq 8 ] &> /dev/null
 then
         nofetch="do you have games on your phone ?"
-elif [ $rng -eq 9 ]
+elif [ $rng -eq 9 ] &> /dev/null
 then
         nofetch="you mean to tell me there aren't little men in this box?"
-elif [ $rng -eq 10 ]
+elif [ $rng -eq 10 ] &> /dev/null
 then
         nofetch="plan 4 from the front door"
-elif [ $rng -eq 11 ]
+elif [ $rng -eq 11 ] &> /dev/null
 then
 	nofetch="i use "$osname" btw"
-elif [ $rng -eq 12 ]
+elif [ $rng -eq 12 ] &> /dev/null
 then
 	nofetch="if you're reading this, it's already too late"
 else
@@ -69,7 +69,12 @@ fi
 
 osname=$(echo $osname | sed 's/FreeBSD //g')
 
-echo " "
-echo "> $nofetch" | tr '[:upper:]' '[:lower:]'
-echo "> $osname $(uname -smr)" | tr '[:upper:]' '[:lower:]'
-echo " "
+if [ $1 == "-o" ] &> /dev/null || [ $2 == "-o" ] &> /dev/null
+then
+	echo "$osname"
+else
+	echo " "
+	echo "> $nofetch" | tr '[:upper:]' '[:lower:]'
+	echo "> $osname $(uname -smr)" | tr '[:upper:]' '[:lower:]'
+	echo " "
+fi

@@ -8,6 +8,8 @@ look no further than nofetch.
 
 simply run `nofetch`, and watch all of your r/unixporn problems go away.
 
+**new:** append either a number `1-11` to get a specific prompt - or append`-o` to get just the os name value!
+
 ![](screenshot.png)
 
 ## install instructions
@@ -23,7 +25,6 @@ simply run `nofetch`, and watch all of your r/unixporn problems go away.
 - run install.sh
 
   `./install.sh`
-  
 ## dependencies
 realistically any system that has the following
 
