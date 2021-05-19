@@ -67,8 +67,6 @@ else
         nofetch="something has gone terribly wrong"
 fi
 
-osname=$(echo $osname | sed 's/FreeBSD //g')
-
 if [ $1 == "-o" ] &> /dev/null || [ $2 == "-o" ] &> /dev/null
 then
 	echo "$osname"
