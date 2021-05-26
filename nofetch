@@ -30,8 +30,6 @@ if you're reading this, it's already too late"
 
 nofetch=$(echo "$array" | shuf -n 1)
 
-echo $nofetch
-
 if [ $1 == "-o" ] &> /dev/null || [ $2 == "-o" ] &> /dev/null
 then
 	echo "$osname"
