@@ -8,7 +8,7 @@ look no further than nofetch.
 
 simply run `nofetch`, and watch all of your r/unixporn problems go away.
 
-**new:** append either a number `1-11` to get a specific prompt - or append`-o` to get just the os name value!
+**new:** append`-o` to get just the os name value! useful for piping the ACTUAL distribution or OS name into other scripts/scriptlets
 
 ![](screenshot.png)
 
