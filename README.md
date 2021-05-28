@@ -1,5 +1,4 @@
 # nofetch
-the fetch tool that outputs nothing
 
 ever get sick and tired of all of those xfetch tools on r/unixporn?
 ever just want a no-bullshit fetch?
